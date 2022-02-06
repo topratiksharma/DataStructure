@@ -7,10 +7,14 @@ var PriorityQueue = /** @class */ (function () {
         this.count = 0;
     }
     PriorityQueue.prototype.add = function (item) {
-        var i = 0;
-        if (this.count === this.items.length)
+        if (this.isFull())
             throw ("ERROR");
         // shifting items
+        this.items[this.shiftItemsToInsert(item)] = item;
+        this.count++;
+    };
+    PriorityQueue.prototype.shiftItemsToInsert = function (item) {
+        var i = 0;
         for (i = this.count - 1; i >= 0; i--) {
             if (this.items[i] > item) {
                 this.items[i + 1] = this.items[i];
@@ -18,11 +22,22 @@ var PriorityQueue = /** @class */ (function () {
             else
                 break;
         }
-        this.items[i + 1] = item;
-        this.count++;
+        return i + 1;
     };
     PriorityQueue.prototype.toString = function () {
         return this.items.toString();
+    };
+    PriorityQueue.prototype.remove = function () {
+        if (this.isEmpty()) {
+            throw console.error();
+        }
+        return this.items[--this.count];
+    };
+    PriorityQueue.prototype.isFull = function () {
+        return this.count === this.items.length;
+    };
+    PriorityQueue.prototype.isEmpty = function () {
+        return this.count === 0;
     };
     return PriorityQueue;
 }());
