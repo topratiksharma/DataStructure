@@ -6,9 +6,10 @@ var linked_list_1 = require("./3-LinkedList/linked-list");
 var Balancing_String_Using_Stack_1 = require("./4-Stack/Balancing_String_Using_Stack");
 var PriorityQueue_1 = require("./5-Queue/PriorityQueue");
 var hashtable_1 = require("./6-HashTables/hashtable");
+var Tree_1 = require("./7-Trees/Tree");
 var main = /** @class */ (function () {
     function main() {
-        this.creatingHashTable();
+        this.createTree();
     }
     main.prototype.creatingLinkList = function () {
         var linkedList = new linked_list_1.LinkedList();
@@ -79,6 +80,20 @@ var main = /** @class */ (function () {
         hashTable.put(4, "44");
         hashTable.put(6, "234");
         console.log(JSON.stringify(hashTable));
+    };
+    main.prototype.createTree = function () {
+        var tree = new Tree_1.Tree();
+        tree.insert(7);
+        tree.insert(4);
+        tree.insert(9);
+        tree.insert(1);
+        tree.insert(6);
+        tree.insert(8);
+        tree.insert(10);
+        console.log(tree.toString());
+        console.log(tree.find(10));
+        console.log(tree.find(4));
+        console.log(tree.find(2));
     };
     return main;
 }());

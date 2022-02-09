@@ -4,10 +4,11 @@ import { LinkedList } from "./3-LinkedList/linked-list";
 import { BalancingString } from "./4-Stack/Balancing_String_Using_Stack";
 import { PriorityQueue } from "./5-Queue/PriorityQueue";
 import { HashTable } from "./6-HashTables/hashtable";
+import { Tree } from "./7-Trees/Tree";
 
 class main {
   constructor() {
-    this.creatingHashTable();
+    this.createTree();
   }
 
   creatingLinkList() {
@@ -84,6 +85,21 @@ class main {
     hashTable.put(4, "44");
     hashTable.put(6, "234");
     console.log(JSON.stringify(hashTable));
+  }
+
+  createTree() {
+    const tree = new Tree();
+    tree.insert(7);
+    tree.insert(4);
+    tree.insert(9);
+    tree.insert(1);
+    tree.insert(6);
+    tree.insert(8);
+    tree.insert(10);
+    console.log(tree.toString());
+    console.log(tree.find(10));
+    console.log(tree.find(4));
+    console.log(tree.find(2));
   }
 }
 
