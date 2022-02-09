@@ -90,10 +90,13 @@ var main = /** @class */ (function () {
         tree.insert(6);
         tree.insert(8);
         tree.insert(10);
-        console.log(tree.toString());
-        console.log(tree.find(10));
-        console.log(tree.find(4));
-        console.log(tree.find(2));
+        // console.log(tree.toString());
+        // console.log(tree.find(10));
+        // console.log(tree.find(4));
+        // console.log(tree.find(2));
+        // console.log(tree.traversePreOrder());
+        // console.log(tree.traversePostOrder());
+        console.log(tree.traverseInOrder());
     };
     return main;
 }());

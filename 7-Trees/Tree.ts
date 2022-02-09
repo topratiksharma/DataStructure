@@ -1,10 +1,20 @@
 /** USAGES
- * Represent Hireachial Data
- *
+ * Represent Hireachial Data 
+ * 
  * Databases
  * Autocompletion
  * Compilers
  * Compression (jpeg, mp3)
+
+// Traversels
+  1.) Depth Order Traversels
+        a.) Pre Order   | Root Left Right
+        b.) In Order    | Left Root Right
+        c.) Post Order  | Left Right Root 
+
+  2.) Breadth First
+   a.) Level Order
+   b.) 
  */
 
 export class Tree {
@@ -36,7 +46,7 @@ export class Tree {
     }
   }
 
-  find(value: number) {
+  public find(value: number) {
     let current = this.root;
     while (current) {
       if (value < current.value) {
@@ -50,8 +60,45 @@ export class Tree {
     return false;
   }
 
-  toString() {
+  public toString() {
     return "Node : " + this.root.value;
+  }
+
+  public traversePreOrder() {
+    console.log("=========== Printing Pre Order traversels ===========");
+    this.traversePreOrders(this.root);
+  }
+
+  private traversePreOrders(node: TNode) {
+    if (!node) return;
+    console.log("Value: ", node.value);
+    this.traversePreOrders(node.leftChild);
+    this.traversePreOrders(node.rightChild);
+  }
+
+  public traverseInOrder() {
+    console.log("=========== Printing In Order traversels ===========");
+    this.traverseInOrders(this.root);
+  }
+
+  private traverseInOrders(node: TNode) {
+    if (!node) return;
+    this.traverseInOrders(node.leftChild);
+    console.log("Value: ", node.value);
+    this.traverseInOrders(node.rightChild);
+  }
+
+  public traversePostOrder() {
+    console.log("=========== Printing Post Order traversels ===========");
+    this.traversePostOrders(this.root);
+  }
+ 
+  private traversePostOrders(node: TNode) {
+    if (!node) return;
+
+    this.traversePostOrders(node.leftChild);
+    this.traversePostOrders(node.rightChild);
+    console.log("Value: ", node.value);
   }
 }
 
@@ -64,3 +111,15 @@ class TNode {
     this.value = value;
   }
 }
+
+// interface IInter {
+// 	id: number
+// }
+
+// interface IInter {
+// 	name: string
+// }
+
+// const mysVar: IInter = {
+// 	s
+// }
