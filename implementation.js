@@ -102,7 +102,7 @@ var main = /** @class */ (function () {
         console.log("Get Nodes at Distance 0:", tree.getNodesAtDistance(0));
         console.log("Get Nodes at Distance 1:", tree.getNodesAtDistance(1));
         console.log("Get Nodes at Distance 2:", tree.getNodesAtDistance(2));
-        console.log("Get Nodes at Distance 3:", tree.getNodesAtDistance(3));
+        console.log("Get Nodes at Distance 30:", tree.getNodesAtDistance(30));
         var tree2 = new Tree_1.Tree();
         tree2.insert(7);
         tree2.insert(4);
@@ -112,6 +112,7 @@ var main = /** @class */ (function () {
         tree2.insert(8);
         tree2.insert(10);
         console.log("is Equal", tree2.isEqual(tree));
+        console.log("Level Order Traversal:", tree.levelOrderTraversal());
     };
     return main;
 }());

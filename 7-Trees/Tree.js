@@ -13,9 +13,7 @@
         b.) In Order    | Left Root Right
         c.) Post Order  | Left Right Root
 
-  2.) Breadth First
-   a.) Level Order
-   b.)
+  2.) Breadth First also known as Level Order
  */
 exports.__esModule = true;
 exports.Tree = void 0;
@@ -203,6 +201,17 @@ var Tree = /** @class */ (function () {
         }
         this.findDistance(root.leftChild, distance - 1);
         this.findDistance(root.rightChild, distance - 1);
+    };
+    //#endregion
+    //#region Traversal Orders
+    Tree.prototype.levelOrderTraversal = function () {
+        var arrays = [];
+        for (var i = 0; i <= this.height(this.root); i++) {
+            this.getNodesAtDistance(i).forEach(function (eachValue) {
+                arrays.push(eachValue);
+            });
+        }
+        return arrays;
     };
     //#endregion
     Tree.prototype.isLeaf = function (node) {
