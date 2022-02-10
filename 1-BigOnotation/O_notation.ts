@@ -4,6 +4,7 @@ class O_notation {
         this.O_Of_n([5, 6]);
         this.O_Of_n_Square([5, 6]);
     }
+    
     O_Of_one(i) {
         console.log("=================O of 1=================")
         console.log(i[1]);
