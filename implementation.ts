@@ -5,10 +5,11 @@ import { BalancingString } from "./4-Stack/Balancing_String_Using_Stack";
 import { PriorityQueue } from "./5-Queue/PriorityQueue";
 import { HashTable } from "./6-HashTables/hashtable";
 import { Tree } from "./7-Trees/Tree";
+import { AVLTree } from "./8-AVL_TRee/AVL_Tree";
 
 class main {
   constructor() {
-    this.createTree();
+    this.createAVLTree();
   }
 
   creatingLinkList() {
@@ -127,6 +128,14 @@ class main {
     console.log("is Equal", tree2.isEqual(tree));
 
     console.log("Level Order Traversal:", tree.levelOrderTraversal());
+  }
+
+  createAVLTree(){
+    const avlTree = new AVLTree();
+    avlTree.insert(10);
+    avlTree.insert(20);
+    avlTree.insert(30);
+    console.log(JSON.stringify(avlTree));
   }
 }
 

@@ -7,9 +7,10 @@ var Balancing_String_Using_Stack_1 = require("./4-Stack/Balancing_String_Using_S
 var PriorityQueue_1 = require("./5-Queue/PriorityQueue");
 var hashtable_1 = require("./6-HashTables/hashtable");
 var Tree_1 = require("./7-Trees/Tree");
+var AVL_Tree_1 = require("./8-AVL_TRee/AVL_Tree");
 var main = /** @class */ (function () {
     function main() {
-        this.createTree();
+        this.createAVLTree();
     }
     main.prototype.creatingLinkList = function () {
         var linkedList = new linked_list_1.LinkedList();
@@ -113,6 +114,13 @@ var main = /** @class */ (function () {
         tree2.insert(10);
         console.log("is Equal", tree2.isEqual(tree));
         console.log("Level Order Traversal:", tree.levelOrderTraversal());
+    };
+    main.prototype.createAVLTree = function () {
+        var avlTree = new AVL_Tree_1.AVLTree();
+        avlTree.insert(10);
+        avlTree.insert(20);
+        avlTree.insert(30);
+        console.log(JSON.stringify(avlTree));
     };
     return main;
 }());
