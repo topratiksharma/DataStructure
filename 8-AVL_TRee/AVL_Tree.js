@@ -63,10 +63,10 @@ var AVLTree = /** @class */ (function () {
         return (node === null || node === void 0 ? void 0 : node.height) || 0;
     };
     AVLTree.prototype.isLeftHeavy = function (node) {
-        return this.balanceFactor(node) >= 1;
+        return this.balanceFactor(node) > 1;
     };
     AVLTree.prototype.isRightHeavy = function (node) {
-        return this.balanceFactor(node) <= -1;
+        return this.balanceFactor(node) < -1;
     };
     AVLTree.prototype.balanceFactor = function (node) {
         return node

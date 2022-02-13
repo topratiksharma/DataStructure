@@ -8,9 +8,10 @@ var PriorityQueue_1 = require("./5-Queue/PriorityQueue");
 var hashtable_1 = require("./6-HashTables/hashtable");
 var Tree_1 = require("./7-Trees/Tree");
 var AVL_Tree_1 = require("./8-AVL_TRee/AVL_Tree");
+var Heap_1 = require("./9-Heap/Heap");
 var main = /** @class */ (function () {
     function main() {
-        this.createAVLTree();
+        this.createHeap();
     }
     main.prototype.creatingLinkList = function () {
         var linkedList = new linked_list_1.LinkedList();
@@ -121,6 +122,18 @@ var main = /** @class */ (function () {
         avlTree.insert(20);
         avlTree.insert(30);
         console.log(JSON.stringify(avlTree));
+    };
+    main.prototype.createHeap = function () {
+        var numbers = [7, 3, 10, 6, 22, 14];
+        var heap = new Heap_1.Heaps(numbers.length);
+        for (var i = 0; i < numbers.length; i++) {
+            heap.insert(numbers[i]);
+        }
+        console.log("Current heap: ", heap);
+        for (var i = numbers.length - 1; i >= 0; i--) {
+            numbers[i] = heap.remove();
+        }
+        console.log("Current numbers: ", numbers);
     };
     return main;
 }());

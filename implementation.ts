@@ -6,10 +6,11 @@ import { PriorityQueue } from "./5-Queue/PriorityQueue";
 import { HashTable } from "./6-HashTables/hashtable";
 import { Tree } from "./7-Trees/Tree";
 import { AVLTree } from "./8-AVL_TRee/AVL_Tree";
+import { Heaps } from "./9-Heap/Heap";
 
 class main {
   constructor() {
-    this.createAVLTree();
+    this.createHeap();
   }
 
   creatingLinkList() {
@@ -130,12 +131,23 @@ class main {
     console.log("Level Order Traversal:", tree.levelOrderTraversal());
   }
 
-  createAVLTree(){
+  createAVLTree() {
     const avlTree = new AVLTree();
     avlTree.insert(10);
     avlTree.insert(20);
     avlTree.insert(30);
     console.log(JSON.stringify(avlTree));
+  }
+
+  createHeap() {
+    const numbers = [7, 3, 10, 6, 22, 14];
+    const heap = new Heaps(numbers.length);
+
+    for (let i = 0; i < numbers.length; i++) { heap.insert(numbers[i]); }
+    console.log("Current heap: ", heap);
+
+    for (let i = numbers.length - 1; i >= 0; i--) { numbers[i] = heap.remove(); }
+    console.log("Current numbers: ", numbers);
   }
 }
 
