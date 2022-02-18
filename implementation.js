@@ -9,9 +9,11 @@ var hashtable_1 = require("./6-HashTables/hashtable");
 var Tree_1 = require("./7-Trees/Tree");
 var AVL_Tree_1 = require("./8-AVL_TRee/AVL_Tree");
 var Heap_1 = require("./9-Heap/Heap");
+var Tries_1 = require("./10-Tries/Tries");
+var Graphs_1 = require("./11-Graphs/Graphs");
 var main = /** @class */ (function () {
     function main() {
-        this.createHeap();
+        this.createGraph();
     }
     main.prototype.creatingLinkList = function () {
         var linkedList = new linked_list_1.LinkedList();
@@ -134,6 +136,23 @@ var main = /** @class */ (function () {
             numbers[i] = heap.remove();
         }
         console.log("Current numbers: ", numbers);
+    };
+    main.prototype.createTrie = function () {
+        var trie = new Tries_1.Trie();
+        trie.insert("Test");
+    };
+    main.prototype.createGraph = function () {
+        var graph = new Graphs_1.Graph();
+        graph.addNode("A");
+        graph.addNode("B");
+        graph.addNode("C");
+        graph.addEdge("A", "B");
+        graph.addEdge("A", "C");
+        // graph.print();
+        // graph.removeNode("A");
+        graph.removeEdge("A", "C");
+        graph.removeEdge("A", "D");
+        graph.print();
     };
     return main;
 }());

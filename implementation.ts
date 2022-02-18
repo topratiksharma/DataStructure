@@ -7,10 +7,12 @@ import { HashTable } from "./6-HashTables/hashtable";
 import { Tree } from "./7-Trees/Tree";
 import { AVLTree } from "./8-AVL_TRee/AVL_Tree";
 import { Heaps } from "./9-Heap/Heap";
+import { Trie } from "./10-Tries/Tries";
+import { Graph } from "./11-Graphs/Graphs";
 
 class main {
   constructor() {
-    this.createHeap();
+    this.createGraph();
   }
 
   creatingLinkList() {
@@ -143,11 +145,37 @@ class main {
     const numbers = [7, 3, 10, 6, 22, 14];
     const heap = new Heaps(numbers.length);
 
-    for (let i = 0; i < numbers.length; i++) { heap.insert(numbers[i]); }
+    for (let i = 0; i < numbers.length; i++) {
+      heap.insert(numbers[i]);
+    }
     console.log("Current heap: ", heap);
 
-    for (let i = numbers.length - 1; i >= 0; i--) { numbers[i] = heap.remove(); }
+    for (let i = numbers.length - 1; i >= 0; i--) {
+      numbers[i] = heap.remove();
+    }
     console.log("Current numbers: ", numbers);
+  }
+
+  createTrie() {
+    const trie = new Trie();
+    trie.insert("Test");
+  }
+
+  createGraph() {
+    const graph = new Graph();
+    graph.addNode("A");
+    graph.addNode("B");
+    graph.addNode("C");
+
+    graph.addEdge("A", "B");
+    graph.addEdge("A", "C");
+
+    // graph.print();
+    // graph.removeNode("A");
+    graph.removeEdge("A", "C");
+    graph.removeEdge("A", "D");
+
+    graph.print();
   }
 }
 
