@@ -1,0 +1,28 @@
+Searching algorithms
+- 1.) Linear Search
+- 2.) Binary Search
+- 3.) Ternary Search
+- 4.) Jump Search
+- 5.) Exponential Search
+
+Linear: each item is inspected once to find the number of items
+
+Binary :
+It works only on sorted algorithms, so if the list in not sorted then it requires more time.
+we devide the array in two parts from middle and then compare if the item is on left or right side of the array.
+if the finding item is smaller than the middle of the array then we assume that it exists in the left side of the array 
+and we discard the right side of the array and then again devide the left part in two parts from middle to repeat the procedure.
+
+Ternary Search : 
+In ternary search we devide array in 3 parts keeping mid1 and mid 2 as pointers, and compare if the target is present on the
+each index (mid1 and mid2) if not then we compare which one is higher after comparing the values. if found we again devide 
+and then the array in three parts.
+
+Jump Search : 
+In Jump search we devide the sorted array into blocks and then compare last element of the each block with target.
+if found then we return if not then we see if its smaller or large. if its smaller then we search the current block.
+if large then we move to next block. If not found and we reach end of the array then we conclude.
+
+Exponential Search:
+In this search we set 1 pointer and then double it on each iteration if the item do not exist in that range.
+

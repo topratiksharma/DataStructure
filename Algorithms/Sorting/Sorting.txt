@@ -1,0 +1,8 @@
+Selection Sort : 
+In Each pass we find the minimum value and than move it to the top or right place,
+We devide array into sorted and unsorted part.
+
+Bucket Sort:
+- In this the array is divided into number of buckets then each buckets is then sorted individually.
+- After sorting each bucket is combined into one
+
