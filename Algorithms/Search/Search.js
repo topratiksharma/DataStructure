@@ -27,7 +27,7 @@ class Search {
   }
 
   binarySearch(array, target) {
-    array = array.sort();
+    array = array.sort((a, b) => a - b);
     return this.binarySearchRec(array, target, 0, array.length - 1);
   }
 
