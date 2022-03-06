@@ -49,16 +49,15 @@ function getValue(s, p) {
     default:
       break;
   }
+
   return value;
 }
-
-// console.log(RomanToInteger("MCMXCIV"));
 
 function IntegerToRoman(a) {
   console.log(a.toString()[a.toString().length - 1]);
   s = a.toString().split("");
   let total = 0;
-  let previous = "";
+  let previous = ""; 
   let pointer = 1;
   while (s.length > 0) {
     const d = s.pop();
