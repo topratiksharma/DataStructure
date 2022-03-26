@@ -1,5 +1,24 @@
 <!DOCTYPE html>
-<label for=""></label>
-<form action="">
-    
-</form>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="file" id="file-upload" />
+    <button type="button" onclick="read()">Submit</button>
+  </body>
+  <script>
+    function read() {
+      const input = document.getElementById("file-upload").files[0];
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        console.log(e.target.result);
+      };
+
+      reader.readAsText(input);
+    }
+  </script>
+</html>

@@ -18,12 +18,24 @@ function selectionSort(unSortedArray) {
   return unSortedArray;
 }
 
+function selectionSort2(array) {
+  for (let i = 0; i < array.length; i++) {
+    let min = i;
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[min] > array[j]) {
+        min = j;
+      }
+    }
+    swap(i, min, array);
+  }
+  return array;
+}
+
 function swap(i, j, array) {
   const temp = array[i];
   array[i] = array[j];
   array[j] = temp;
 }
 
-// const unSortedArray = [7, 3, 1, 4, 6, 2, 3];
-const unSortedArray = [1, 2, 3, 4, 5, 6];
-console.log(selectionSort(unSortedArray));
+// console.log(selectionSort([7, 3, 1, 4, 6, 2, 3]));
+console.log(selectionSort2([8, 5, 9, 5, 6, 3, 2]));

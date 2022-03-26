@@ -73,5 +73,4 @@ console.log(search.reverseString("Hello"));
 console.log(search.reverseWords("Hello World"));
 console.log(search.isRotation("abcd", "cdab"));
 console.log(search.removeDuplicates("helloooo world"));
-
 console.log(search.capitalizeEachWord("  helloooo      world    "));
