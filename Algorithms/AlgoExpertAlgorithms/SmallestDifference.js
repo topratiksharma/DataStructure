@@ -1,0 +1,3 @@
+function smallestDifference(arrayOne, arrayTwo) {
+    
+}
