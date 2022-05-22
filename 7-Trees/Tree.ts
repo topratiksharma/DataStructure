@@ -179,6 +179,13 @@ export class Tree {
   }
   //#endregion
 
+  // var emitter = new Emmiter()
+
+  // const sub1 = emitter.subscribe('Event Name', params)
+  
+  // sub1.emit()
+  // sub1.unsubscribe();
+  
   //#region Find if the trees are equal
   isEqual(tree: Tree): boolean {
     if (!tree) return false;
